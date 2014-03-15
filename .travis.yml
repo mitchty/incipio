@@ -4,10 +4,14 @@ compiler:
   - gcc
   - clang
 
+env:
+  - "PATH=${HOME}/local/bin:$PATH"
+
 before_install:
   - sudo apt-get -qq update
 
 before_script:
+  - (git clone http://github.com/hroptatyr/yuck.git -b v0.1.6 && cd yuck && autoreconf -vi && ./configure --prefix=$HOME/local && make install) > /dev/null 2>&1
   - ./autogen.sh
 
 script:
