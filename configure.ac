@@ -6,6 +6,6 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([.])
 AC_PROG_CC
 AC_LANG([C])
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign dist-bzip2 subdir-objects std-options])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

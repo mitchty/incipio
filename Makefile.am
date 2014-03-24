@@ -1,4 +1,3 @@
-AUTOMAKE_OPTIONS = foreign std-options
 SUFFIXES = .yucc
 DISTCLEANFILES = incipio.yucc
 EXTRA_DIST = $(BUILT_SOURCES)
