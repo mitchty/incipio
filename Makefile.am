@@ -4,6 +4,11 @@ EXTRA_DIST = $(BUILT_SOURCES)
 EXTRA_DIST += autogen
 EXTRA_DIST += incipio.yucc
 EXTRA_DIST += incipio.yuck
+EXTRA_DIST += incipio.1
+EXTRA_DIST += incipio.1.txt
+EXTRA_DIST += version.c
+EXTRA_DIST += version.h
+BUILT_SOURCES = incipio.yucc incipio.1
 
 bin_PROGRAMS = incipio
 incipio_SOURCES = incipio.c
