@@ -1,5 +1,7 @@
 .deps/
+*.tar.bz2
 *.tar.gz
+*.tar.xz
 *.yucc
 COPYING
 INSTALL
