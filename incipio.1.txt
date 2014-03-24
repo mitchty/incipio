@@ -1,0 +1,56 @@
+INCIPIO(1)
+===========
+:doctype: manpage
+
+NAME
+----
+incipio - Does stuff.
+
+SYNOPSIS
+--------
+*incipio* ['OPTIONS'] 'FILE'
+
+DESCRIPTION
+-----------
+The incipio(1) command does stuff with stuff.
+
+OPTIONS
+-------
+Very few that are useful for the moment.
+
+*-V|--version*::
+        Print out version information.
+
+*-h|--help*::
+        Print online help.
+
+EXIT STATUS
+-----------
+*0*::
+    Success
+
+*>=1*::
+    Failure (syntax or usage error; configuration error;
+    ; unexpected error).
+
+BUGS
+----
+Report bugs to:
+
+<https://github.com/tqkhk0/incipio>
+
+AUTHOR
+------
+Mitch Tishmack is the principally repsonsible person for these
+shenanigans.
+
+RESOURCES
+---------
+
+Github page:
+
+<https://github.com/tqkhk0/incipio>
+
+COPYING
+-------
+Copyright \(C) 2013 Mitch Tishmack under the do whatever you want license

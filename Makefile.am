@@ -1,5 +1,5 @@
 SUFFIXES = .yucc
-DISTCLEANFILES = incipio.yucc
+DISTCLEANFILES = incipio.yucc incipio.1
 EXTRA_DIST = $(BUILT_SOURCES)
 EXTRA_DIST += autogen
 EXTRA_DIST += incipio.yucc
