@@ -1,7 +1,7 @@
 SUFFIXES = .yucc
 DISTCLEANFILES = incipio.yucc
 EXTRA_DIST = $(BUILT_SOURCES)
-EXTRA_DIST += autogen.sh
+EXTRA_DIST += autogen
 EXTRA_DIST += incipio.yucc
 EXTRA_DIST += incipio.yuck
 
@@ -19,4 +19,4 @@ incipio.c: incipio.yucc
 # Not really needed but useful at times.
 cleanall: clean distclean
 	-rm -fr autom4te.cache
-	-rm -f Makefile Makefile.in aclocal.m4 compile config.h.in configure depcomp install-sh missing incipio-*.tar.gz
+	-rm -f Makefile Makefile.in aclocal.m4 compile config.h.in configure depcomp install-sh missing incipio-*.tar.*

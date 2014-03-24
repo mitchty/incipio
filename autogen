@@ -1,0 +1,40 @@
+#!/usr/bin/env perl
+my $git_post_commit_dest = ".git/hooks/post-commit";
+my $git_post_commit_file = "./hooks/git-post-commit";
+
+if ( -d ".git" &&
+     !(-l ".git/hooks/post-commit" or -e $git_post_commit_dest )) {
+  if (link($git_post_commit_file, $git_post_commit_dest)) {
+    print "hardlinking $git_post_commit_file->$git_post_commit_dest\n";
+  } else {
+    if (symlink($git_post_commit_file, $git_post_commit_dest)) {
+      print "softlinking $git_post_commit_file->$git_post_commit_dest\n";
+    } else {
+      warn "Can't hard or soft link to $git_post_commit_dest\!\n\n";
+      warn "Because: $!\n";
+    }
+  }
+}
+
+my $ar = "autoreconf --force --install";
+print("\n\t$ar\n\n");
+system(split(/ /, $ar)) and do {
+  my $rc = $? >> 8;
+  warn "autoreconf exited with rc $rc\n";
+  exit $rc;
+};
+
+sub tryit {
+  my $what = shift();
+  print("\n\t$what");
+  print(" <<", join(">> <<", @ARGV), ">>") if (scalar(@ARGV) > 0);
+  print("\n\n");
+  system($what, @ARGV) and do {
+      my $rc = $? >> 8;
+      warn "./configure exited with rc $rc\n";
+      exit $rc;
+  };
+}
+
+tryit("./configure");
+tryit("make");
