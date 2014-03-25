@@ -4,17 +4,18 @@ EXTRA_DIST = $(BUILT_SOURCES)
 EXTRA_DIST += autogen
 EXTRA_DIST += incipio.yucc
 EXTRA_DIST += incipio.yuck
-EXTRA_DIST += incipio.1
-EXTRA_DIST += incipio.1.txt
+EXTRA_DIST += man/incipio.1
+EXTRA_DIST += man/incipio.1.txt
 EXTRA_DIST += version.c
 EXTRA_DIST += version.h
-BUILT_SOURCES = incipio.yucc incipio.1
+BUILT_SOURCES = incipio.yucc man/incipio.1
 
 bin_PROGRAMS = incipio
 incipio_SOURCES = incipio.c
 incipio_SOURCES += incipio.yucc
 incipio_SOURCES += version.c
 incipio_CPPFLAGS = -DHAVE_VERSION_H
+man1_MANS = man/incipio.1
 
 if HAVE_GIT
 if HAVE_GIT_DIR
@@ -25,8 +26,8 @@ endif
 endif
 
 if HAVE_ASCIIDOC
-incipio.1: incipio.1.txt
-	a2x -d manpage -f manpage $<
+man/incipio.1: man/incipio.1.txt
+	a2x -d manpage -f manpage $< > $@
 endif
 
 if HAVE_YUCK
